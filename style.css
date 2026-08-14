@@ -468,6 +468,17 @@ nav {
 }
 
 
+body.light-mode #trailerButton {
+    color: black;
+    border-color: black;
+}
+
+body.light-mode #trailerButton:hover {
+    background: black;
+    color: white;
+}
+
+
 /* ========================= */
 /* FILMMAKERS */
 /* ========================= */
@@ -841,6 +852,123 @@ body.light-mode #themeButton:hover {
     cursor: pointer;
 }
 
+
+/* ========================= */
+/* REVIEWS CAROUSEL */
+/* ========================= */
+
+.reviews-section {
+    text-align: center;
+    background-color: #111111;
+}
+
+.review-carousel {
+    max-width: 900px;
+    margin: 50px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.review-content {
+    min-height: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#reviewQuote {
+    font-size: 24px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+#reviewSource {
+    color: #c9a66b;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.carousel-button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Light Mode */
+
+body.light-mode .reviews-section {
+    background-color: #f7f3ea;
+}
+
+body.light-mode .carousel-button {
+    border-color: black;
+    color: black;
+}
+
+body.light-mode .carousel-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+/* ========================= */
+/* REVIEW SLIDE ANIMATION */
+/* ========================= */
+
+.review-content.slide-next {
+    animation: slideFromRight 0.4s ease;
+}
+
+.review-content.slide-previous {
+    animation: slideFromLeft 0.4s ease;
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+    
+
+
+
 /* ========================= */
 /* MOBILE DESIGN */
 /* ========================= */
@@ -941,6 +1069,24 @@ body.light-mode #themeButton:hover {
 
         grid-template-columns: 1fr;
 
+    }
+    
+
+    /* Reviews */
+
+
+    .review-carousel {
+        gap: 10px;
+    }
+
+    #reviewQuote {
+        font-size: 18px;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
 
 
